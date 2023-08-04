@@ -1,22 +1,22 @@
 # 编译输出
 /target/
-
+ # IDE和编辑器文件
 /.idea/
 /.vscode/
 *.swp
 *.swo
-
+ # 依赖管理器
 /Cargo.lock
-
+ # 编译器临时文件
 *.rs.bk
-
+ # 测试生成的文件
 **/target/debug/deps
 **/target/debug/build
-
+ # 文档
 /target/doc/
-
+ # 编译器生成的文件
 **/target/
-
+ # 已编译的二进制文件
 **/Cargo.toml.orig
 **/Cargo.lock.orig
 **/Cargo.toml.bak
@@ -26,7 +26,7 @@
 **/Cargo.toml.tmp
 **/Cargo.lock.tmp
 **/Cargo.toml~
-
+ # macOS系统文件
 .DS_Store
-
+ # Windows系统文件
 Thumbs.db

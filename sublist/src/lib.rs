@@ -1,4 +1,3 @@
-use std::cmp::Ord;
 #[derive(Debug, PartialEq, Eq)]
 pub enum Comparison {
     Equal,
