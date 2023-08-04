@@ -15,15 +15,23 @@ impl WordCounter {
     }
 
     fn display(&self) {
-        for (k, v) in self.0.iter().filter(|(_, v)| **v > 1) {
+        let sorted_vec = self.sort();
+        for (k, v) in sorted_vec.into_iter().filter(|(_, v)| **v > 1) {
             println!("{}: {}", k, v);
         }
     }
 
     fn save<W: io::Write>(&self, writer: &mut W)  {
-        for (k, v) in self.0.iter() {
+        let sorted_vec = self.sort();
+        for (k, v) in sorted_vec.into_iter() {
             let _ = writer.write(format!("{}: {}\n", k, v).as_bytes());
         }
+    }
+
+    fn sort(&self) -> Vec<(&String, &u64)> {
+        let mut sorted_vec: Vec<(&String, &u64)> = self.0.iter().collect();
+        sorted_vec.sort_by(|a, b| a.0.cmp(b.0));
+        sorted_vec
     }
 }
 
